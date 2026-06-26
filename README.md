@@ -1,69 +1,75 @@
-# Tidewell Canvas Co. — Landing Page
+# Gulfstream Marine Supplies
 
-A single-page, conversion-focused landing site for a custom marine canvas factory:
-**custom boat covers, bimini & T-tops, and full cockpit enclosures**. The primary
-call-to-action is **Request Free Fabric Samples** (lead capture).
+> Essentials for Every Voyage
 
-Built as static files — no build step, no dependencies. Just open `index.html`.
+A three-page marketing site for a marine canvas house that serves two audiences:
+the **trade** (wholesale materials) and **boat owners** (bespoke custom covers).
+Static HTML/CSS/JS — no build step. Open `index.html`.
 
-## Files
+## Pages
 
-| File | Purpose |
-|------|---------|
-| `index.html` | All page content & structure |
-| `styles.css` | Styling — slate blue & sand luxury palette |
-| `script.js` | Sticky nav, mobile menu, scroll reveals, form handling |
+| File | Page | Audience | Primary CTA |
+|------|------|----------|-------------|
+| `index.html` | Brand hub — splits the two audiences | Everyone | Route to the right page |
+| `custom.html` | Custom covers & canvas | B2C — boat owners | **Request Fabric Samples** |
+| `trade.html` | Wholesale & materials | B2B — awning mfrs, canvas/sail lofts, upholsterers | **Open a Trade Account** |
 
-## Design choices (per your direction)
+Shared assets: `styles.css` (design system) and `script.js` (nav, reveals, forms).
 
-- **Palette:** Slate blue & sand (coastal-premium). Defined as CSS variables at the
-  top of `styles.css` — change `--slate-*` and `--sand-*` to re-skin instantly.
-- **Products featured:** Custom boat covers · Bimini & T-tops · Full enclosures.
-- **Primary CTA:** Request fabric samples (the lead form near the bottom).
-- **Imagery:** Tasteful CSS placeholders, each labeled with the shot it expects.
-  Replace them with your real factory / on-the-water photos (see below).
-- **Vibe:** Hand-stitched fine canvas — serif display type (Fraunces), woven-canvas
-  texture motifs, brass accent used sparingly.
+## Brand / design system
+
+- **Palette:** slate blue & sand with a single **brass** accent, on warm paper.
+  All defined as CSS variables in the `:root` block of `styles.css` — change them
+  once to reskin everything.
+- **Logo:** monogram (compass star + gulfstream current) + wordmark lockup, used
+  in nav and footer. Inline SVG, also used as the favicon.
+- **Motifs:** a recurring "gulfstream current" line (`.stream`), small-caps
+  overlines with hairline rules (`.eyebrow`), and a subtle film-grain overlay for
+  a printed, premium feel.
+- **Type:** Fraunces (display serif) + Inter (UI), via Google Fonts.
+- **Imagery:** unified duotone placeholders (`.ph` + tonal `--a … --f` variants),
+  each labeled with the shot it expects — so disparate photos still read as one
+  brand once you drop them in.
 
 ## Customize
 
-1. **Brand name** — find-and-replace `Tidewell Canvas Co.` (placeholder) with your
-   real name across `index.html`. Update the `<title>` and meta description too.
-2. **Contact details** — footer has placeholder address / phone / email.
-3. **Copy & testimonials** — all placeholder; swap for real customer quotes.
-4. **Colors** — edit the `:root` variables in `styles.css`.
-5. **Fonts** — swap the Google Fonts `<link>` in `index.html`.
+1. **Brand name / tagline** — search-and-replace `Gulfstream Marine Supplies` and
+   `Essentials for Every Voyage` if they ever change.
+2. **Contact details** — placeholder address / phone / emails live in each footer
+   (`hello@…` for retail, `trade@…` for wholesale).
+3. **Trade specs** — the spec table and catalog in `trade.html` use representative
+   placeholder figures; replace with your real line card, widths, weights and MOQs.
+4. **Copy & testimonials** — all placeholder.
+5. **Colors / fonts** — `:root` variables and the Google Fonts `<link>`.
 
 ## Add real photos
 
-Each placeholder is a `<div class="ph ...">` with a `ph__label` describing the shot.
-To use a real image, replace the div with:
+Each placeholder is a `<div class="ph ph--x">` with a `ph__label` describing the
+shot. Replace with an `<img>` (or set a `background-image` on that element):
 
 ```html
 <img src="images/your-photo.jpg" alt="Fitted mooring cover on a center console" />
 ```
 
-…or set the photo as a CSS `background-image` on that placeholder class. The
-labels tell you what each slot expects (e.g. *"Photo: fitted mooring cover"*).
+Keep aspect ratios consistent (the gallery and cards already enforce them) so the
+grid stays tidy.
 
-## Wire up the lead form
+## Wire up the forms
 
-The form currently validates and shows a thank-you message, logging the data to the
-browser console. To actually receive leads, open `script.js` and replace the marked
-block in the submit handler with a real submission. Easiest options:
+Both lead forms (`#sampleForm` on custom.html, `#tradeForm` on trade.html) validate
+and show an inline thank-you, logging data to the console. To actually receive
+leads, replace the marked block in `script.js`'s submit handler:
 
-- **Formspree / Getform** — set `<form action="https://formspree.io/f/XXXX" method="POST">`
-  and remove the `ev.preventDefault()` (or keep the JS for the inline thank-you).
-- **Netlify Forms** — add `netlify` to the `<form>` tag if hosting on Netlify.
-- **Your own API / CRM** — `POST` the `data` object to your endpoint.
+- **Formspree / Getform** — set the form `action` + `method="POST"`.
+- **Netlify Forms** — add the `netlify` attribute to each `<form>`.
+- **Your own API / CRM** — `POST` the collected `data` object.
 
-The collected fields are: `firstName, lastName, email, phone, address, boat,
-product, notes`.
+Sample form fields: `firstName, lastName, email, phone, address, boat, product, notes`.
+Trade form fields: `company, contact, email, phone, businessType, volume, resaleId, notes`.
 
 ## Run locally
-
-Just open `index.html` in a browser, or serve the folder:
 
 ```bash
 python3 -m http.server 8000   # then visit http://localhost:8000
 ```
+Or use the VS Code **Live Server** extension for auto-reload on save.

@@ -52,10 +52,9 @@
   var yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
-  /* ---- Sample request form ---- */
-  var form = document.getElementById("sampleForm");
-  var success = document.getElementById("formSuccess");
-  if (form) {
+  /* ---- Lead forms (sample request + trade account) ---- */
+  document.querySelectorAll("form#sampleForm, form#tradeForm").forEach(function (form) {
+    var success = form.querySelector("#formSuccess");
     form.addEventListener("submit", function (ev) {
       ev.preventDefault();
       if (!form.checkValidity()) {
@@ -66,9 +65,9 @@
          Replace this block with a POST to your CRM / email service / form
          endpoint (e.g. Formspree, Netlify Forms, or your own API). */
       var data = Object.fromEntries(new FormData(form).entries());
-      console.log("Fabric sample request:", data);
+      console.log(form.id + " submitted:", data);
 
-      form.querySelectorAll(".field, .form__fineprint, button[type=submit]").forEach(function (n) {
+      form.querySelectorAll(".field, .form__row, .form__fineprint, button[type=submit]").forEach(function (n) {
         n.style.display = "none";
       });
       if (success) {
@@ -76,5 +75,5 @@
         success.scrollIntoView({ behavior: "smooth", block: "center" });
       }
     });
-  }
+  });
 })();
