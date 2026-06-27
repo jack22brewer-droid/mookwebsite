@@ -527,6 +527,28 @@ a { color: inherit; }
 .ph--e { background: linear-gradient(135deg, #c2ad84, #748b9a); }
 .ph--f { background: linear-gradient(135deg, #2f4756, #12202a); }
 
+/* ----- Real photos inside placeholders (with brand duotone + graceful fallback) ----- */
+.ph > img {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; z-index: 0;
+  filter: saturate(0.82) contrast(1.03) brightness(0.96);
+}
+.ph:has(img)::before { display: none; }                 /* drop the diagonal texture over real photos */
+.ph:has(img)::after {                                    /* unify disparate stock under one brand tint */
+  background: linear-gradient(150deg, rgba(24,36,46,0.30), rgba(20,32,42,0.5));
+}
+.ph:has(img) .ph__label { display: none; }
+
+/* ----- Hero / page-hero background photos ----- */
+.hero__photo, .page-hero__photo {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; z-index: 0; filter: saturate(0.8) contrast(1.03) brightness(0.78);
+}
+.hero::after, .page-hero::after {
+  content: ""; position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(158deg, rgba(24,36,46,0.74) 0%, rgba(18,30,40,0.88) 60%, rgba(15,24,32,0.94) 100%);
+}
+
 /* =========================================================
    Reveal animation
    ========================================================= */
@@ -555,6 +577,8 @@ a { color: inherit; }
   .g-a { grid-column: span 2; }
   .footer__grid { grid-template-columns: 1fr 1fr; }
   .hero__est { display: none; }
+  .split__card { min-height: 400px; }
+  .spec th, .spec td { padding: 13px 16px; }
 }
 @media (max-width: 600px) {
   .form__row { grid-template-columns: 1fr; }
@@ -562,6 +586,11 @@ a { color: inherit; }
   .g-a { grid-column: span 1; }
   .stat-row { grid-template-columns: 1fr 1fr; }
   .hero__trust { gap: 26px; }
+  .split__card { min-height: 340px; justify-content: flex-start; }
+  .split__body { padding-top: 70px; }
+  .gallery__grid { grid-auto-rows: 190px; }
+  .hero__inner { padding-top: 104px; }
+  .page-hero { padding-top: clamp(120px, 18vh, 160px); }
 }
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; scroll-behavior: auto; }

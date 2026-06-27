@@ -42,17 +42,31 @@ Shared assets: `styles.css` (design system) and `script.js` (nav, reveals, forms
 4. **Copy & testimonials** — all placeholder.
 5. **Colors / fonts** — `:root` variables and the Google Fonts `<link>`.
 
-## Add real photos
+## Photos (temporary placeholders)
 
-Each placeholder is a `<div class="ph ph--x">` with a `ph__label` describing the
-shot. Replace with an `<img>` (or set a `background-image` on that element):
+The photo spots are currently filled with **temporary stock photos** pulled by
+keyword from [LoremFlickr](https://loremflickr.com) (Creative-Commons Flickr
+images), e.g. `https://loremflickr.com/800/600/boat?lock=51`. The `?lock=N`
+number pins a specific image so it stays stable between loads.
+
+- A **brand duotone overlay** is applied to every photo so the varied stock still
+  reads as one cohesive, premium brand.
+- Each `<img>` has `onerror="this.remove()"`, so if an image ever fails to load it
+  gracefully falls back to the branded gradient placeholder — never a broken icon.
+- These are random marine photos, so a given one may not perfectly match its slot.
+  To change what a slot pulls, edit the keyword or bump the `lock=` number. Tell me
+  the slot and I'll swap it.
+
+**To drop in your own photos**, replace the `src` with your file and keep the rest:
 
 ```html
-<img src="images/your-photo.jpg" alt="Fitted mooring cover on a center console" />
+<img src="images/transom-cover.jpg" alt="Fitted mooring cover on a center console"
+     loading="lazy" decoding="async" onerror="this.remove()" />
 ```
 
-Keep aspect ratios consistent (the gallery and cards already enforce them) so the
-grid stays tidy.
+Each placeholder also keeps a hidden `ph__label` describing the shot it expects.
+Aspect ratios are enforced by the cards/gallery, so any reasonably sized photo
+will crop tidily (`object-fit: cover`).
 
 ## Wire up the forms
 
