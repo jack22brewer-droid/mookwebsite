@@ -1,6 +1,22 @@
 /* =========================================================
-   Tidewell Canvas Co. — interactions
+   Gulfstream Marine Supplies — interactions
    ========================================================= */
+
+/* =========================================================
+   LEAD FORM ENDPOINT  ——  paste your integration URL here
+   ---------------------------------------------------------
+   Every form on the site (Get Started + distributor account)
+   posts to this one URL. Set it once and you're live.
+
+   Zapier:   make a Zap → trigger "Webhooks by Zapier → Catch
+             Hook" → copy the custom webhook URL → paste below.
+   Or use:   Formspree / Getform / Basin form endpoint URL.
+
+   Leave it as "" to keep demo mode (shows the thank-you
+   message and logs the data to the browser console).
+   ========================================================= */
+var FORM_ENDPOINT = "";
+
 (function () {
   "use strict";
 
@@ -52,21 +68,12 @@
   var yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
-  /* ---- Lead forms (sample request + trade account) ---- */
+  /* ---- Lead forms — all post to the single FORM_ENDPOINT above ---- */
   document.querySelectorAll("form#sampleForm, form#tradeForm").forEach(function (form) {
     var success = form.querySelector("#formSuccess");
-    form.addEventListener("submit", function (ev) {
-      ev.preventDefault();
-      if (!form.checkValidity()) {
-        form.reportValidity();
-        return;
-      }
-      /* No backend wired up yet — collect values and show confirmation.
-         Replace this block with a POST to your CRM / email service / form
-         endpoint (e.g. Formspree, Netlify Forms, or your own API). */
-      var data = Object.fromEntries(new FormData(form).entries());
-      console.log(form.id + " submitted:", data);
+    var button = form.querySelector("button[type=submit]");
 
+    var showThankYou = function () {
       form.querySelectorAll(".field, .form__row, .form__fineprint, button[type=submit]").forEach(function (n) {
         n.style.display = "none";
       });
@@ -74,6 +81,36 @@
         success.hidden = false;
         success.scrollIntoView({ behavior: "smooth", block: "center" });
       }
+    };
+
+    form.addEventListener("submit", function (ev) {
+      ev.preventDefault();
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      var data = Object.fromEntries(new FormData(form).entries());
+      data.formSource = form.id;              // lets Zapier tell which form it was
+      data.submittedAt = new Date().toISOString();
+
+      /* No endpoint set yet → demo mode (thank-you + console log). */
+      if (!FORM_ENDPOINT) {
+        console.log("[demo] " + form.id + " — set FORM_ENDPOINT in script.js to go live:", data);
+        showThankYou();
+        return;
+      }
+
+      /* Endpoint set → POST the submission, then thank them.
+         Works with Zapier Catch Hooks, Formspree, Getform, Basin, etc. */
+      if (button) { button.disabled = true; button.textContent = "Sending…"; }
+      fetch(FORM_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        body: JSON.stringify(data)
+      })
+        .then(showThankYou)
+        .catch(function () { showThankYou(); }); // still thank the visitor on network hiccups
     });
   });
 })();

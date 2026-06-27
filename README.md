@@ -46,12 +46,31 @@ specific image. These are temporary — replace the `src` with your own photos:
 
 ## Forms
 
-Two lead forms validate and show an inline thank-you, logging data to the console:
-- `#sampleForm` — the **Get Started** form on `index.html`
-- `#tradeForm` — the **Open an Account** form on `distributors.html`
+Both lead forms post to **one** endpoint, so you only configure it once:
+- `#sampleForm` — the **Get Started** form (`get-started.html`)
+- `#tradeForm` — the **Open an Account** form (`distributors.html`)
 
-To receive leads for real, replace the marked block in `script.js` with a POST to
-Formspree / Netlify Forms / your CRM. (Forms are not wired to a backend yet.)
+### Connect it (one line)
+
+Open `script.js` and paste your URL into `FORM_ENDPOINT` at the top:
+
+```js
+var FORM_ENDPOINT = "https://hooks.zapier.com/hooks/catch/123456/abcd/";
+```
+
+**With Zapier:** create a Zap → trigger **Webhooks by Zapier → Catch Hook** →
+copy the custom webhook URL → paste it above. Then add actions (email yourself,
+add a row to Google Sheets, create a CRM lead, etc.). Each submission arrives as
+JSON including a `formSource` field (`sampleForm` or `tradeForm`) so you can route
+B2C vs. distributor leads differently.
+
+Also works with **Formspree / Getform / Basin** — just paste their form URL.
+
+Leave `FORM_ENDPOINT` blank to keep demo mode (shows the thank-you message and
+logs the data to the browser console — nothing is sent).
+
+> Prefer an embedded form instead (Zapier Interfaces, Jotform, Tally, Google
+> Forms)? Replace the `<form>…</form>` block on the page with their embed code.
 
 ## Run locally
 
