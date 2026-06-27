@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Get Started — Request a Quote | Gulfstream Marine Supplies</title>
+  <meta name="description" content="Start your custom marine canvas project — tell us about your boat and we'll follow up with options, a sample set and a quote." />
+  <meta name="theme-color" content="#1a1d1c" />
+  <meta property="og:title" content="Get Started — Gulfstream Marine Supplies" />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' fill='%231a1d1c'/%3E%3Cg fill='none' stroke='%239c8458' stroke-width='1.5' stroke-linecap='round'%3E%3Cpath d='M10 22c2.5 0 2.5-2 5-2s2.5 2 5 2 2.5-2 5-2 2.5 2 5 2'/%3E%3Cpath d='M10 27c2.5 0 2.5-2 5-2s2.5 2 5 2 2.5-2 5-2 2.5 2 5 2' opacity='.55'/%3E%3C/g%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400&family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="nav">
+    <div class="wrap nav__inner">
+      <a href="index.html" class="brand" aria-label="Gulfstream Marine Supplies — home">
+        <span class="brand__name">Gulfstream</span>
+        <span class="brand__sub">Marine Supplies</span>
+      </a>
+      <nav class="nav__links" aria-label="Primary">
+        <a href="products.html">Products</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="process.html">Our Process</a>
+        <a href="get-started.html" class="contact is-active">Get Started</a>
+      </nav>
+      <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <!-- ============ PAGE HERO ============ -->
+  <section class="phero" id="top">
+    <div class="phero__fallback" aria-hidden="true"></div>
+    <img class="phero__img" src="https://loremflickr.com/1920/1280/sailboat,ocean?lock=12" alt="" aria-hidden="true" decoding="async" onerror="this.remove()" />
+    <div class="wrap phero__inner">
+      <p class="phero__crumb"><a href="index.html">Gulfstream</a> &nbsp;/&nbsp; Get Started</p>
+      <h1 class="phero__title">Start your project.</h1>
+      <p class="phero__lead">Tell us about your boat and what you have in mind. We'll follow up with options, a sample set and a quote — no pressure, no call center.</p>
+    </div>
+  </section>
+
+  <!-- ============ FORM ============ -->
+  <section class="block block--ink" id="quote">
+    <div class="wrap split2">
+      <div class="reveal">
+        <div class="opener"><span class="opener__no">—</span><span class="label">Request a quote</span></div>
+        <h2 style="font-family:var(--serif);font-weight:400;font-size:clamp(1.9rem,4.4vw,3.4rem);letter-spacing:-0.02em;line-height:1.06;margin:18px 0 16px;color:var(--cream)">A few details to get going.</h2>
+        <p style="color:rgba(247,244,236,0.7);max-width:38ch">The more you tell us about the boat and the project, the more useful our first reply will be.</p>
+        <ul class="hlist" style="margin-top:30px">
+          <li><span class="k">·</span><span style="color:rgba(247,244,236,0.82)">Guidance from a real canvas maker</span></li>
+          <li><span class="k">·</span><span style="color:rgba(247,244,236,0.82)">A curated fabric sample set</span></li>
+          <li><span class="k">·</span><span style="color:rgba(247,244,236,0.82)">No pressure, no automated spam</span></li>
+        </ul>
+      </div>
+
+      <form class="form form--wide reveal" data-d="1" id="sampleForm" novalidate>
+        <div class="form__row">
+          <label class="field"><span>First name</span><input type="text" name="firstName" autocomplete="given-name" required /></label>
+          <label class="field"><span>Last name</span><input type="text" name="lastName" autocomplete="family-name" required /></label>
+        </div>
+        <div class="form__row">
+          <label class="field"><span>Email</span><input type="email" name="email" autocomplete="email" required /></label>
+          <label class="field"><span>Phone <em>(optional)</em></span><input type="tel" name="phone" autocomplete="tel" /></label>
+        </div>
+        <div class="form__row">
+          <label class="field"><span>Boat make &amp; model <em>(optional)</em></span><input type="text" name="boat" placeholder="e.g. Boston Whaler 270" /></label>
+          <label class="field"><span>I'm interested in</span>
+            <select name="product" required>
+              <option value="" disabled selected>Select…</option>
+              <option>Full enclosure</option>
+              <option>Custom cover</option>
+              <option>Bimini / T-top</option>
+              <option>Cushions / canvas</option>
+              <option>Something else</option>
+            </select>
+          </label>
+        </div>
+        <label class="field"><span>Tell us about the project <em>(optional)</em></span><textarea name="notes" rows="3" placeholder="Color ideas, timeline, questions…"></textarea></label>
+        <button type="submit" class="btn-line btn-line--cream" style="margin-top:6px">Get Started</button>
+        <p class="form__fineprint">By submitting, you agree to be contacted about your request. We never sell your information.</p>
+        <div class="form__success" id="formSuccess" hidden>
+          <strong>Thank you — your request is in.</strong>
+          <p>We'll review your boat details and follow up with options, samples and a quote.</p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="block">
+    <div class="wrap" style="max-width:860px">
+      <div class="sec-head reveal"><div class="opener"><span class="opener__no">—</span><span class="label">Good to know</span></div></div>
+      <div class="acc reveal" data-d="1">
+        <details><summary>Do you really pattern on my boat?</summary><p>Yes. For the best fit we pattern panels directly on your vessel. For some standard covers we can also work from detailed measurements you provide.</p></details>
+        <details><summary>What canvas do you use?</summary><p>Marine-grade, solution-dyed acrylics and coated cloths chosen for UV, mildew and salt resistance — sewn with UV-stable thread and corrosion-proof hardware.</p></details>
+        <details><summary>How long does a project take?</summary><p>Most custom covers and biminis run a few weeks from approved pattern to final fit, depending on the piece and season. We'll give you a clear timeline up front.</p></details>
+        <details><summary>Are the fabric samples free?</summary><p>Completely. Start a request above and we'll send curated swatches at no cost and no obligation.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer__top">
+        <div>
+          <a href="index.html" class="brand"><span class="brand__name">Gulfstream</span><span class="brand__sub">Marine Supplies</span></a>
+          <p>Custom boat enclosures and covers, built in our own loft on the Gulf Coast since 1987.</p>
+        </div>
+        <div class="footer__col">
+          <h4>Explore</h4>
+          <a href="products.html">Products</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="process.html">Our Process</a>
+          <a href="get-started.html">Get Started</a>
+        </div>
+        <div class="footer__col">
+          <h4>Distributors</h4>
+          <a href="distributors.html">Wholesale Supply</a>
+          <a href="distributors.html#catalog">Catalog</a>
+          <a href="distributors.html#account">Open Account</a>
+        </div>
+        <div class="footer__col">
+          <h4>Visit</h4>
+          <p>123 Harborside Way<br />Your Town, ST 00000</p>
+          <a href="tel:+10000000000">(000) 000-0000</a>
+          <a href="mailto:hello@gulfstreammarine.com">hello@gulfstreammarine.com</a>
+        </div>
+      </div>
+      <div class="footer__base">
+        <span>© <span id="year"></span> Gulfstream Marine Supplies</span>
+        <span>Placeholder content — replace copy, photos &amp; details with your own.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

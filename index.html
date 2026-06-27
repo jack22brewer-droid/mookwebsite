@@ -25,10 +25,10 @@
         <span class="brand__sub">Marine Supplies</span>
       </a>
       <nav class="nav__links" aria-label="Primary">
-        <a href="#products">Products</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#process">Our Process</a>
-        <a href="#get-started" class="contact">Get Started</a>
+        <a href="products.html">Products</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="process.html">Our Process</a>
+        <a href="get-started.html" class="contact">Get Started</a>
       </nav>
       <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
@@ -44,130 +44,93 @@
       <div class="hero__row">
         <p class="hero__lead">Custom boat enclosures and covers — patterned to your hull and finished by hand, from marine-grade canvas that outlasts the weather.</p>
         <div class="hero__cta">
-          <a href="#get-started" class="btn-line btn-line--cream">Get Started</a>
-          <a href="#products" class="link link--cream">See what we make</a>
+          <a href="get-started.html" class="btn-line btn-line--cream">Get Started</a>
+          <a href="products.html" class="link link--cream">See what we make</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ PRODUCTS ============ -->
-  <section class="block" id="products">
+  <!-- ============ FEATURED PRODUCTS ============ -->
+  <section class="block">
     <div class="wrap">
-      <div class="sec-head reveal">
-        <div class="opener"><span class="opener__no">—</span><span class="label">What we make</span></div>
-        <h2>Enclosures &amp; covers, built to your boat.</h2>
-      </div>
-
-      <div class="feat reveal">
-        <div class="feat__media"><span class="fallback" aria-hidden="true"></span><img src="https://loremflickr.com/1100/1400/yacht,boat?lock=53" alt="Full cockpit enclosure with clear vinyl" loading="lazy" decoding="async" onerror="this.remove()" /></div>
+      <div class="sec-head reveal" style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:18px;max-width:none">
         <div>
-          <span class="feat__no">01</span>
-          <h3 class="feat__title">Full Enclosures</h3>
-          <p class="feat__body">Turn the cockpit into a room. Camper and cockpit enclosures with crystal-clear marine vinyl, zip-out panels and weather-tight seals — patterned on your boat for a flawless fit in every season.</p>
-          <p class="label" style="margin-top:22px">Cockpit &nbsp;·&nbsp; Camper &nbsp;·&nbsp; Clear vinyl</p>
+          <div class="opener"><span class="opener__no">—</span><span class="label">What we make</span></div>
+          <h2 style="margin-top:18px">Enclosures &amp; covers, built to your boat.</h2>
         </div>
+        <a href="products.html" class="link">All products</a>
       </div>
-
-      <div class="feat rev reveal">
-        <div class="feat__media"><span class="fallback" aria-hidden="true"></span><img src="https://loremflickr.com/1100/1400/boat?lock=51" alt="Fitted mooring cover" loading="lazy" decoding="async" onerror="this.remove()" /></div>
-        <div>
-          <span class="feat__no">02</span>
-          <h3 class="feat__title">Custom Covers</h3>
-          <p class="feat__body">Snug, water-shedding mooring, storage and travel covers patterned to your hull — tight enough to shed rain, vented to breathe, tailored to the last cleat.</p>
-          <p class="label" style="margin-top:22px">Mooring &nbsp;·&nbsp; Storage &nbsp;·&nbsp; Trailerable</p>
-        </div>
-      </div>
-
-      <div class="minor reveal">
-        <div class="opener"><span class="opener__no">—</span><span class="label">Also custom-made</span></div>
-        <div class="minor__grid">
-          <div>
-            <h3>Biminis &amp; T-Tops</h3>
-            <p>Shade canopies and hardtop canvas with clean tension lines and stainless frames.</p>
+      <div class="paths__grid reveal" data-d="1">
+        <a href="products.html" class="path">
+          <span class="path__fallback" aria-hidden="true"></span>
+          <img class="path__img" src="https://loremflickr.com/1100/1400/yacht,boat?lock=53" alt="Full cockpit enclosure" loading="lazy" decoding="async" onerror="this.remove()" />
+          <div class="path__body">
+            <span class="path__no">Core product</span>
+            <h3 class="path__title">Full Enclosures</h3>
+            <p class="path__desc">Cockpit and camper enclosures with clear vinyl, zip-out panels and weather-tight seals.</p>
+            <span class="link link--cream">Explore enclosures</span>
           </div>
-          <div>
-            <h3>Cushions &amp; Canvas</h3>
-            <p>Seating and berth cushions, sail covers, console covers and weather curtains.</p>
+        </a>
+        <a href="products.html" class="path">
+          <span class="path__fallback" aria-hidden="true"></span>
+          <img class="path__img" src="https://loremflickr.com/1100/1400/boat?lock=51" alt="Custom boat cover" loading="lazy" decoding="async" onerror="this.remove()" />
+          <div class="path__body">
+            <span class="path__no">Core product</span>
+            <h3 class="path__title">Custom Covers</h3>
+            <p class="path__desc">Mooring, storage and travel covers patterned to your hull to shed water and breathe.</p>
+            <span class="link link--cream">Explore covers</span>
           </div>
-        </div>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- ============ GALLERY ============ -->
-  <section class="block block--deep" id="gallery">
+  <!-- ============ CRAFT / PROCESS TEASER ============ -->
+  <section class="craft block--deep">
+    <div class="wrap craft__grid">
+      <div class="craft__img reveal">
+        <span class="fallback" aria-hidden="true"></span>
+        <img src="https://loremflickr.com/1200/1500/sewing,fabric?lock=73" alt="Cutting and sewing canvas in the loft" loading="lazy" decoding="async" onerror="this.remove()" />
+      </div>
+      <div class="reveal" data-d="1">
+        <div class="opener"><span class="opener__no">—</span><span class="label">Our process</span></div>
+        <h2 class="craft__title">Patterned by hand. Stitched to last a decade at sea.</h2>
+        <div class="craft__body">
+          <p>We don't pull canvas off a shelf. Each panel is patterned to the boat and run through marine machines with UV-stable thread — the way fine canvas has always been made.</p>
+        </div>
+        <a href="process.html" class="link" style="margin-top:26px">See our process</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ GALLERY TEASER ============ -->
+  <section class="block">
     <div class="wrap">
-      <div class="sec-head reveal">
-        <div class="opener"><span class="opener__no">—</span><span class="label">Selected work</span></div>
-        <h2>A look at the finished line.</h2>
+      <div class="sec-head reveal" style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:18px;max-width:none">
+        <div>
+          <div class="opener"><span class="opener__no">—</span><span class="label">Selected work</span></div>
+          <h2 style="margin-top:18px">A look at the finished line.</h2>
+        </div>
+        <a href="gallery.html" class="link">Full gallery</a>
       </div>
       <div class="gal reveal" data-d="1">
         <div class="gal__c big"><span class="fallback" aria-hidden="true"></span><img src="https://loremflickr.com/1200/900/yacht?lock=61" alt="Enclosure, clear vinyl" loading="lazy" decoding="async" onerror="this.remove()" /></div>
-        <div class="gal__c sm"><span class="fallback" aria-hidden="true"></span><img src="https://loremflickr.com/800/600/boat?lock=63" alt="Cover, transom detail" loading="lazy" decoding="async" onerror="this.remove()" /></div>
         <div class="gal__c sm"><span class="fallback" aria-hidden="true"></span><img src="https://loremflickr.com/800/600/sailboat?lock=62" alt="Bimini, open water" loading="lazy" decoding="async" onerror="this.remove()" /></div>
-        <div class="gal__c sm"><span class="fallback" aria-hidden="true"></span><img src="https://loremflickr.com/800/600/marina?lock=65" alt="Helm canvas" loading="lazy" decoding="async" onerror="this.remove()" /></div>
-        <div class="gal__c sm"><span class="fallback" aria-hidden="true"></span><img src="https://loremflickr.com/800/600/harbor?lock=66" alt="Marina at dusk" loading="lazy" decoding="async" onerror="this.remove()" /></div>
+        <div class="gal__c sm"><span class="fallback" aria-hidden="true"></span><img src="https://loremflickr.com/800/600/boat?lock=63" alt="Cover, transom detail" loading="lazy" decoding="async" onerror="this.remove()" /></div>
       </div>
     </div>
   </section>
 
-  <!-- ============ OUR PROCESS ============ -->
-  <section class="block" id="process">
-    <div class="wrap split2">
-      <div class="reveal">
-        <div class="opener"><span class="opener__no">—</span><span class="label">Our process</span></div>
-        <h2 style="font-family:var(--serif);font-weight:400;font-size:clamp(1.9rem,4.4vw,3.4rem);letter-spacing:-0.02em;line-height:1.06;margin:18px 0 16px">From measurement to mooring.</h2>
-        <p style="color:var(--ink-soft);max-width:40ch">Every project runs the same patient course — patterned on the boat, cut and sewn in our own loft, fitted on the water.</p>
+  <!-- ============ CLOSING CTA ============ -->
+  <section class="close">
+    <div class="wrap">
+      <h2 class="reveal">Let's dress your boat.</h2>
+      <p class="reveal" data-d="1">Tell us about your boat and we'll put together a quote.</p>
+      <div class="close__row reveal" data-d="2">
+        <a href="get-started.html" class="btn-line">Get Started</a>
+        <a href="products.html" class="link">Browse products</a>
       </div>
-      <ul class="hlist reveal" data-d="1">
-        <li><span class="k">01</span><span><b style="font-weight:600">Measure &amp; pattern.</b> We come to your boat and pattern every panel to its exact lines and fittings.</span></li>
-        <li><span class="k">02</span><span><b style="font-weight:600">Choose your canvas.</b> Select cloth, color and clear-vinyl options from samples in your hands.</span></li>
-        <li><span class="k">03</span><span><b style="font-weight:600">Cut &amp; hand-stitch.</b> Cut and sewn in-house on marine machines with UV-stable thread.</span></li>
-        <li><span class="k">04</span><span><b style="font-weight:600">Fit &amp; finish.</b> Fitted on the water, seams tensioned, the final fit dialed in.</span></li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- ============ GET STARTED ============ -->
-  <section class="block block--ink" id="get-started">
-    <div class="wrap split2">
-      <div class="reveal">
-        <div class="opener"><span class="opener__no">—</span><span class="label">Get started</span></div>
-        <h2 style="font-family:var(--serif);font-weight:400;font-size:clamp(1.9rem,4.4vw,3.4rem);letter-spacing:-0.02em;line-height:1.06;margin:18px 0 16px;color:var(--cream)">Start your project.</h2>
-        <p style="color:rgba(247,244,236,0.7);max-width:40ch">Tell us about your boat and what you have in mind. We'll follow up with options, a sample set and a quote — no pressure, no call center.</p>
-      </div>
-
-      <form class="form form--wide reveal" data-d="1" id="sampleForm" novalidate>
-        <div class="form__row">
-          <label class="field"><span>First name</span><input type="text" name="firstName" autocomplete="given-name" required /></label>
-          <label class="field"><span>Last name</span><input type="text" name="lastName" autocomplete="family-name" required /></label>
-        </div>
-        <div class="form__row">
-          <label class="field"><span>Email</span><input type="email" name="email" autocomplete="email" required /></label>
-          <label class="field"><span>Phone <em>(optional)</em></span><input type="tel" name="phone" autocomplete="tel" /></label>
-        </div>
-        <div class="form__row">
-          <label class="field"><span>Boat make &amp; model <em>(optional)</em></span><input type="text" name="boat" placeholder="e.g. Boston Whaler 270" /></label>
-          <label class="field"><span>I'm interested in</span>
-            <select name="product" required>
-              <option value="" disabled selected>Select…</option>
-              <option>Full enclosure</option>
-              <option>Custom cover</option>
-              <option>Bimini / T-top</option>
-              <option>Cushions / canvas</option>
-              <option>Something else</option>
-            </select>
-          </label>
-        </div>
-        <label class="field"><span>Tell us about the project <em>(optional)</em></span><textarea name="notes" rows="3" placeholder="Color ideas, timeline, questions…"></textarea></label>
-        <button type="submit" class="btn-line btn-line--cream" style="margin-top:6px">Get Started</button>
-        <p class="form__fineprint">By submitting, you agree to be contacted about your request. We never sell your information.</p>
-        <div class="form__success" id="formSuccess" hidden>
-          <strong>Thank you — your request is in.</strong>
-          <p>We'll review your boat details and follow up with options, samples and a quote.</p>
-        </div>
-      </form>
     </div>
   </section>
 
@@ -192,10 +155,10 @@
         </div>
         <div class="footer__col">
           <h4>Explore</h4>
-          <a href="#products">Products</a>
-          <a href="#gallery">Gallery</a>
-          <a href="#process">Our Process</a>
-          <a href="#get-started">Get Started</a>
+          <a href="products.html">Products</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="process.html">Our Process</a>
+          <a href="get-started.html">Get Started</a>
         </div>
         <div class="footer__col">
           <h4>Distributors</h4>

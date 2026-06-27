@@ -95,6 +95,7 @@ a { color: inherit; text-decoration: none; }
   font-size: 0.84rem; font-weight: 500; letter-spacing: 0.04em; color: var(--cream); opacity: 0.85;
   transition: opacity .25s, color .25s;
 }
+.nav__links a.is-active, .nav.scrolled .nav__links a.is-active { color: var(--brass); opacity: 1; }
 .nav.scrolled .nav__links a { color: var(--ink); }
 .nav__links a:hover { opacity: 1; color: var(--brass); }
 .nav__links a.contact { border-bottom: 1px solid currentColor; padding-bottom: 2px; opacity: 1; }
