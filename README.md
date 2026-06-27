@@ -59,3 +59,17 @@ Formspree / Netlify Forms / your CRM. (Forms are not wired to a backend yet.)
 python3 -m http.server 8000   # then visit http://localhost:8000
 ```
 Or use the VS Code **Live Server** extension for auto-reload on save.
+
+## Deploy
+
+This is a plain static site — no build step, no server. Deploy the repo root of
+the **`main`** branch to any static host:
+
+- **Netlify / Vercel / Cloudflare Pages** — "New project" → import this repo →
+  framework: **None/Other**, build command: *(leave empty)*, publish directory: **`/`**.
+- **GitHub Pages** — repo **Settings → Pages** → Source: **Deploy from a branch**,
+  Branch: **`main`** / **`/ (root)`**. URL: `https://<user>.github.io/<repo>/`.
+- **Any web host** — just upload the files; `index.html` is the entry point.
+
+Before going live: replace placeholder photos and contact details, and wire the
+forms to a real endpoint (see **Forms** above).
